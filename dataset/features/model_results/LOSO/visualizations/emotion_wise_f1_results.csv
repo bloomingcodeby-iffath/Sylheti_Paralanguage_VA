@@ -1,0 +1,8 @@
+Emotion,SVM_F1,RF_F1
+Anger,0.247,0.175
+Disgust,0.03,0.092
+Fear,0.043,0.024
+Happiness,0.133,0.076
+Neutral,0.065,0.054
+Sadness,0.143,0.1
+Surprise,0.0,0.017

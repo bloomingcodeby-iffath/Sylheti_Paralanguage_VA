@@ -1,0 +1,5 @@
+Model,Accuracy,Accuracy_SD,Macro_F1,Macro_F1_SD
+SVM,0.1762,0.0447,0.118,0.0459
+Random Forest,0.1667,0.0421,0.0914,0.0505
+Dummy Uniform,0.1333,0.0,0.1326,0.0
+Dummy Most Frequent,0.1429,0.0,0.0357,0.0

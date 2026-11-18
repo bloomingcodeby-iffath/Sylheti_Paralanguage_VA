@@ -1,0 +1,3 @@
+Gender,SVM_Macro_F1,RF_Macro_F1
+Female,0.080132,0.058114
+Male,0.155854,0.124772
