@@ -11,3 +11,18 @@ venv/
 
 # Trained models (can be uploaded separately later)
 models/
+
+# Raw recordings
+dataset/raw/
+
+# Archived data
+dataset/old_generated_data/
+
+# Test audio
+dataset/speech_only_test/
+
+# Old generated dataset archive
+dataset/old_generated_data/
+
+# Backups
+*_backup/

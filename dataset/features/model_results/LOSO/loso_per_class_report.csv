@@ -1,0 +1,113 @@
+fold,test_speaker,gender,model,emotion,precision,recall,f1_score,support
+1,arfat,m,SVM,anger,0.27906976744186046,0.4,0.3287671232876712,30.0
+1,arfat,m,SVM,disgust,0.0,0.0,0.0,30.0
+1,arfat,m,SVM,fear,0.16666666666666666,0.1,0.125,30.0
+1,arfat,m,SVM,happiness,0.21153846153846154,0.36666666666666664,0.2682926829268293,30.0
+1,arfat,m,SVM,neutral,0.0,0.0,0.0,30.0
+1,arfat,m,SVM,sadness,0.16483516483516483,0.5,0.24793388429752067,30.0
+1,arfat,m,SVM,surprise,0.0,0.0,0.0,30.0
+1,arfat,m,Random Forest,anger,0.24444444444444444,0.7333333333333333,0.36666666666666664,30.0
+1,arfat,m,Random Forest,disgust,0.5,0.03333333333333333,0.0625,30.0
+1,arfat,m,Random Forest,fear,0.0,0.0,0.0,30.0
+1,arfat,m,Random Forest,happiness,0.14583333333333334,0.23333333333333334,0.1794871794871795,30.0
+1,arfat,m,Random Forest,neutral,0.25,0.1,0.14285714285714285,30.0
+1,arfat,m,Random Forest,sadness,0.2641509433962264,0.4666666666666667,0.3373493975903614,30.0
+1,arfat,m,Random Forest,surprise,0.0,0.0,0.0,30.0
+1,arfat,m,Dummy Uniform,anger,0.08,0.06666666666666667,0.07272727272727272,30.0
+1,arfat,m,Dummy Uniform,disgust,0.14814814814814814,0.13333333333333333,0.14035087719298245,30.0
+1,arfat,m,Dummy Uniform,fear,0.19230769230769232,0.16666666666666666,0.17857142857142858,30.0
+1,arfat,m,Dummy Uniform,happiness,0.10256410256410256,0.13333333333333333,0.11594202898550725,30.0
+1,arfat,m,Dummy Uniform,neutral,0.2,0.2,0.2,30.0
+1,arfat,m,Dummy Uniform,sadness,0.07692307692307693,0.06666666666666667,0.07142857142857142,30.0
+1,arfat,m,Dummy Uniform,surprise,0.13513513513513514,0.16666666666666666,0.14925373134328357,30.0
+1,arfat,m,Dummy Most Frequent,anger,0.14285714285714285,1.0,0.25,30.0
+1,arfat,m,Dummy Most Frequent,disgust,0.0,0.0,0.0,30.0
+1,arfat,m,Dummy Most Frequent,fear,0.0,0.0,0.0,30.0
+1,arfat,m,Dummy Most Frequent,happiness,0.0,0.0,0.0,30.0
+1,arfat,m,Dummy Most Frequent,neutral,0.0,0.0,0.0,30.0
+1,arfat,m,Dummy Most Frequent,sadness,0.0,0.0,0.0,30.0
+1,arfat,m,Dummy Most Frequent,surprise,0.0,0.0,0.0,30.0
+2,fariba,f,SVM,anger,0.14285714285714285,0.9333333333333333,0.24778761061946902,30.0
+2,fariba,f,SVM,disgust,0.0,0.0,0.0,30.0
+2,fariba,f,SVM,fear,0.0,0.0,0.0,30.0
+2,fariba,f,SVM,happiness,0.5,0.23333333333333334,0.3181818181818182,30.0
+2,fariba,f,SVM,neutral,0.0,0.0,0.0,30.0
+2,fariba,f,SVM,sadness,0.0,0.0,0.0,30.0
+2,fariba,f,SVM,surprise,0.0,0.0,0.0,30.0
+2,fariba,f,Random Forest,anger,0.13043478260869565,0.9,0.22784810126582278,30.0
+2,fariba,f,Random Forest,disgust,0.0,0.0,0.0,30.0
+2,fariba,f,Random Forest,fear,0.0,0.0,0.0,30.0
+2,fariba,f,Random Forest,happiness,0.0,0.0,0.0,30.0
+2,fariba,f,Random Forest,neutral,0.0,0.0,0.0,30.0
+2,fariba,f,Random Forest,sadness,0.0,0.0,0.0,30.0
+2,fariba,f,Random Forest,surprise,0.0,0.0,0.0,30.0
+2,fariba,f,Dummy Uniform,anger,0.08,0.06666666666666667,0.07272727272727272,30.0
+2,fariba,f,Dummy Uniform,disgust,0.14814814814814814,0.13333333333333333,0.14035087719298245,30.0
+2,fariba,f,Dummy Uniform,fear,0.19230769230769232,0.16666666666666666,0.17857142857142858,30.0
+2,fariba,f,Dummy Uniform,happiness,0.10256410256410256,0.13333333333333333,0.11594202898550725,30.0
+2,fariba,f,Dummy Uniform,neutral,0.2,0.2,0.2,30.0
+2,fariba,f,Dummy Uniform,sadness,0.07692307692307693,0.06666666666666667,0.07142857142857142,30.0
+2,fariba,f,Dummy Uniform,surprise,0.13513513513513514,0.16666666666666666,0.14925373134328357,30.0
+2,fariba,f,Dummy Most Frequent,anger,0.14285714285714285,1.0,0.25,30.0
+2,fariba,f,Dummy Most Frequent,disgust,0.0,0.0,0.0,30.0
+2,fariba,f,Dummy Most Frequent,fear,0.0,0.0,0.0,30.0
+2,fariba,f,Dummy Most Frequent,happiness,0.0,0.0,0.0,30.0
+2,fariba,f,Dummy Most Frequent,neutral,0.0,0.0,0.0,30.0
+2,fariba,f,Dummy Most Frequent,sadness,0.0,0.0,0.0,30.0
+2,fariba,f,Dummy Most Frequent,surprise,0.0,0.0,0.0,30.0
+3,joy,m,SVM,anger,0.9230769230769231,0.4,0.5581395348837209,30.0
+3,joy,m,SVM,disgust,0.25,0.1,0.14285714285714285,30.0
+3,joy,m,SVM,fear,0.0,0.0,0.0,30.0
+3,joy,m,SVM,happiness,0.2,0.06666666666666667,0.1,30.0
+3,joy,m,SVM,neutral,0.25862068965517243,1.0,0.410958904109589,30.0
+3,joy,m,SVM,sadness,0.0,0.0,0.0,30.0
+3,joy,m,SVM,surprise,0.0,0.0,0.0,30.0
+3,joy,m,Random Forest,anger,0.0,0.0,0.0,30.0
+3,joy,m,Random Forest,disgust,0.42857142857142855,0.1,0.16216216216216217,30.0
+3,joy,m,Random Forest,fear,0.0,0.0,0.0,30.0
+3,joy,m,Random Forest,happiness,0.16363636363636364,0.3,0.21176470588235294,30.0
+3,joy,m,Random Forest,neutral,0.17266187050359713,0.8,0.28402366863905326,30.0
+3,joy,m,Random Forest,sadness,0.0,0.0,0.0,30.0
+3,joy,m,Random Forest,surprise,0.0,0.0,0.0,30.0
+3,joy,m,Dummy Uniform,anger,0.08,0.06666666666666667,0.07272727272727272,30.0
+3,joy,m,Dummy Uniform,disgust,0.14814814814814814,0.13333333333333333,0.14035087719298245,30.0
+3,joy,m,Dummy Uniform,fear,0.19230769230769232,0.16666666666666666,0.17857142857142858,30.0
+3,joy,m,Dummy Uniform,happiness,0.10256410256410256,0.13333333333333333,0.11594202898550725,30.0
+3,joy,m,Dummy Uniform,neutral,0.2,0.2,0.2,30.0
+3,joy,m,Dummy Uniform,sadness,0.07692307692307693,0.06666666666666667,0.07142857142857142,30.0
+3,joy,m,Dummy Uniform,surprise,0.13513513513513514,0.16666666666666666,0.14925373134328357,30.0
+3,joy,m,Dummy Most Frequent,anger,0.14285714285714285,1.0,0.25,30.0
+3,joy,m,Dummy Most Frequent,disgust,0.0,0.0,0.0,30.0
+3,joy,m,Dummy Most Frequent,fear,0.0,0.0,0.0,30.0
+3,joy,m,Dummy Most Frequent,happiness,0.0,0.0,0.0,30.0
+3,joy,m,Dummy Most Frequent,neutral,0.0,0.0,0.0,30.0
+3,joy,m,Dummy Most Frequent,sadness,0.0,0.0,0.0,30.0
+3,joy,m,Dummy Most Frequent,surprise,0.0,0.0,0.0,30.0
+4,wasima,f,SVM,anger,0.13333333333333333,0.06666666666666667,0.08888888888888889,30.0
+4,wasima,f,SVM,disgust,0.047619047619047616,0.03333333333333333,0.0392156862745098,30.0
+4,wasima,f,SVM,fear,0.10666666666666667,0.5333333333333333,0.17777777777777778,30.0
+4,wasima,f,SVM,happiness,0.0,0.0,0.0,30.0
+4,wasima,f,SVM,neutral,0.0,0.0,0.0,30.0
+4,wasima,f,SVM,sadness,0.3333333333333333,0.2,0.25,30.0
+4,wasima,f,SVM,surprise,0.0,0.0,0.0,30.0
+4,wasima,f,Random Forest,anger,0.3333333333333333,0.13333333333333333,0.19047619047619047,30.0
+4,wasima,f,Random Forest,disgust,0.12643678160919541,0.7333333333333333,0.21568627450980393,30.0
+4,wasima,f,Random Forest,fear,0.15789473684210525,0.1,0.12244897959183673,30.0
+4,wasima,f,Random Forest,happiness,0.0,0.0,0.0,30.0
+4,wasima,f,Random Forest,neutral,0.0,0.0,0.0,30.0
+4,wasima,f,Random Forest,sadness,0.0,0.0,0.0,30.0
+4,wasima,f,Random Forest,surprise,0.2,0.03333333333333333,0.05714285714285714,30.0
+4,wasima,f,Dummy Uniform,anger,0.08,0.06666666666666667,0.07272727272727272,30.0
+4,wasima,f,Dummy Uniform,disgust,0.14814814814814814,0.13333333333333333,0.14035087719298245,30.0
+4,wasima,f,Dummy Uniform,fear,0.19230769230769232,0.16666666666666666,0.17857142857142858,30.0
+4,wasima,f,Dummy Uniform,happiness,0.10256410256410256,0.13333333333333333,0.11594202898550725,30.0
+4,wasima,f,Dummy Uniform,neutral,0.2,0.2,0.2,30.0
+4,wasima,f,Dummy Uniform,sadness,0.07692307692307693,0.06666666666666667,0.07142857142857142,30.0
+4,wasima,f,Dummy Uniform,surprise,0.13513513513513514,0.16666666666666666,0.14925373134328357,30.0
+4,wasima,f,Dummy Most Frequent,anger,0.14285714285714285,1.0,0.25,30.0
+4,wasima,f,Dummy Most Frequent,disgust,0.0,0.0,0.0,30.0
+4,wasima,f,Dummy Most Frequent,fear,0.0,0.0,0.0,30.0
+4,wasima,f,Dummy Most Frequent,happiness,0.0,0.0,0.0,30.0
+4,wasima,f,Dummy Most Frequent,neutral,0.0,0.0,0.0,30.0
+4,wasima,f,Dummy Most Frequent,sadness,0.0,0.0,0.0,30.0
+4,wasima,f,Dummy Most Frequent,surprise,0.0,0.0,0.0,30.0

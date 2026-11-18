@@ -1,65 +1,129 @@
-import os
+
 import subprocess
-import pandas as pd
+import csv
+from pathlib import Path
 
-# Project paths
-PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJECT_DIR = Path(__file__).resolve().parent.parent
 
-METADATA_PATH = os.path.join(PROJECT_DIR, "dataset", "metadata.csv")
-OUTPUT_DIR = os.path.join(PROJECT_DIR, "dataset", "processed")
+METADATA_PATH = PROJECT_DIR / "dataset" / "metadata.csv"
+OUTPUT_DIR = PROJECT_DIR / "dataset" / "processed"
+REPORT_DIR = PROJECT_DIR / "dataset" / "features" / "audio_quality"
+REPORT_FILE = REPORT_DIR / "conversion_report.csv"
 
-# Create output folder if it does not exist
-os.makedirs(OUTPUT_DIR, exist_ok=True)
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+REPORT_DIR.mkdir(parents=True, exist_ok=True)
 
-# Read metadata
-df = pd.read_csv(METADATA_PATH)
+with METADATA_PATH.open("r", encoding="utf-8-sig", newline="") as file:
+    metadata = list(csv.DictReader(file))
 
-successful = 0
-failed = []
+results = []
+
+converted = 0
+skipped = 0
+failed = 0
 
 print("Starting audio conversion...\n")
 
-for index, row in df.iterrows():
+for index, row in enumerate(metadata, start=1):
 
-    input_path = os.path.join(PROJECT_DIR, row["filepath"])
+    filename = row["filename"]
+    input_path = PROJECT_DIR / row["filepath"]
+    output_path = OUTPUT_DIR / (Path(filename).stem + ".wav")
 
-    filename = os.path.splitext(row["filename"])[0] + ".wav"
-    output_path = os.path.join(OUTPUT_DIR, filename)
+    status = ""
+    message = ""
 
-    command = [
-        "ffmpeg",
-        "-y",
-        "-i", input_path,
-        "-vn",
-        "-ac", "1",
-        "-ar", "16000",
-        "-c:a", "pcm_s16le",
-        output_path
-    ]
+    if not input_path.exists():
+        status = "FAILED"
+        message = "Input file not found"
+        failed += 1
 
-    result = subprocess.run(
-        command,
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.PIPE,
-        text=True
-    )
+    elif output_path.exists():
+        status = "SKIPPED"
+        message = "Output already exists; not overwritten"
+        skipped += 1
 
-    if result.returncode == 0:
-        successful += 1
     else:
-        failed.append(row["filename"])
+        # Check whether the source contains an audio stream
+        probe_command = [
+            "ffprobe",
+            "-v", "error",
+            "-select_streams", "a:0",
+            "-show_entries", "stream=codec_name",
+            "-of", "default=noprint_wrappers=1:nokey=1",
+            str(input_path)
+        ]
 
-    print(f"Processed: {index + 1}/{len(df)}")
+        probe = subprocess.run(
+            probe_command,
+            capture_output=True,
+            text=True
+        )
+
+        if probe.returncode != 0 or not probe.stdout.strip():
+            status = "FAILED"
+            message = "No valid audio stream: " + probe.stderr.strip()
+            failed += 1
+
+        else:
+            command = [
+                "ffmpeg",
+                "-nostdin",
+                "-hide_banner",
+                "-loglevel", "error",
+                "-i", str(input_path),
+                "-map", "0:a:0",
+                "-vn",
+                "-ac", "1",
+                "-ar", "16000",
+                "-c:a", "pcm_s16le",
+                "-n",
+                str(output_path)
+            ]
+
+            result = subprocess.run(
+                command,
+                capture_output=True,
+                text=True
+            )
+
+            if result.returncode == 0 and output_path.exists():
+                status = "SUCCESS"
+                message = "Converted successfully"
+                converted += 1
+            else:
+                status = "FAILED"
+                message = result.stderr.strip()
+
+                if output_path.exists():
+                    output_path.unlink()
+
+                failed += 1
+
+    results.append({
+        "filename": filename,
+        "status": status,
+        "message": message
+    })
+
+    print(f"[{index}/{len(metadata)}] {filename}: {status}")
+
+# Save conversion report
+with REPORT_FILE.open(
+    "w", newline="", encoding="utf-8-sig"
+) as file:
+    writer = csv.DictWriter(
+        file,
+        fieldnames=["filename", "status", "message"]
+    )
+    writer.writeheader()
+    writer.writerows(results)
 
 print("\nCONVERSION SUMMARY")
-print("------------------")
-print("Total recordings:", len(df))
-print("Successfully converted:", successful)
-print("Failed:", len(failed))
-
-if failed:
-    print("\nFailed files:")
-    for filename in failed:
-        print(filename)
-else:
-    print("\nAll audio files converted successfully!")
+print("=" * 35)
+print("Total recordings:", len(metadata))
+print("Successfully converted:", converted)
+print("Skipped:", skipped)
+print("Failed:", failed)
+print("\nReport saved to:", REPORT_FILE)
+print("Output folder:", OUTPUT_DIR)
