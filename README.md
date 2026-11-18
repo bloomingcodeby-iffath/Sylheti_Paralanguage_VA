@@ -54,6 +54,8 @@ The current dataset contains **840 Sylheti audio recordings** collected from fou
 | Joy | Male | 210 |
 | **Total** | | **840** |
 
+### Age :20-30 years
+
 ### Emotion Classes
 
 The dataset contains seven emotion categories:
@@ -510,6 +512,17 @@ Sylheti_Paralanguage_VA/
 ```
 
 ---
+### Fixed Sentences:
+১. হে আখতা ফি রি য়া আইল্ল ো।
+২. আশমান ো জত ো ফাকি উড়ে র।
+৩. তুমি ত ো আমারে কি চ্ছুখইলায়না।
+৪. রাস্তাত জত ো মানষু জমা অইছইন।
+৫. তাই আস্তা রাইত হজাগ আছি ল।
+৬. বাইচ্চাটা এখলা ঘর ো বইতাখছে ।
+৭. গাছর ডাল ভাংগি য়া ফড়ি গে ছ।
+৮. তারা আইজ রাইত জাইবা গি ।
+৯. হে দরজা বন্ধ খরি লছে ।
+১০. কুনতা বজু তাম ফারলাম না।
 
 ## 9. Technologies Used
 
